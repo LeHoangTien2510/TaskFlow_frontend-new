@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const name = username;
         const email = document.getElementById('registerEmail').value;
 
-        fetch(`${CONFIG.API_BASE_URL}/user/register`, {
+        fetch(`${window.CONFIG.API_BASE_URL}/user/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const password = document.getElementById('loginPassword').value;
 
 
-        fetch(`${CONFIG.API_BASE_URL}/user/login`, {
+        fetch(`${window.CONFIG.API_BASE_URL}/user/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -122,7 +122,7 @@ function onSignIn(response) {
     const data = response;
 
 
-    fetch(`${CONFIG.API_BASE_URL}/user/login_google`, {
+    fetch(`${window.CONFIG.API_BASE_URL}/user/login_google`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
