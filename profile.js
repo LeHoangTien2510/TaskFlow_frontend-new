@@ -15,7 +15,7 @@ document.getElementById('profileInput').addEventListener('change', async functio
 
         formData.append('file', file);
         formData.append('folder', 'profile');
-        await fetch(`${CONFIG.API_BASE_URL}/storage/upload`, {
+        await fetch(`${window.CONFIG.API_BASE_URL}/storage/upload`, {
             method: 'POST',
             body: formData
         })
@@ -59,7 +59,7 @@ document.getElementById('profileForm').addEventListener('submit', function (even
     new_profile.username = localStorage.getItem('username');
 
 
-    fetch(`${CONFIG.API_BASE_URL}/user/update`, {
+    fetch(`${window.CONFIG.API_BASE_URL}/user/update`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

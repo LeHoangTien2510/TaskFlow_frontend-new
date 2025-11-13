@@ -204,7 +204,7 @@ document.getElementById("save_notification_settings").addEventListener("click", 
 
 
         if (notificationTimeStart > now) {
-            fetch(`${CONFIG.API_BASE_URL}/email/schedule`, {
+            fetch(`${window.CONFIG.API_BASE_URL}/email/schedule`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -224,7 +224,7 @@ document.getElementById("save_notification_settings").addEventListener("click", 
             document.getElementById('clear_notification_settings').addEventListener('click', () => {
 
                 // Send cancel request to backend
-                fetch(`${CONFIG.API_BASE_URL}/email/cancel`, {
+                fetch(`${window.CONFIG.API_BASE_URL}/email/cancel`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -254,7 +254,7 @@ document.getElementById("save_notification_settings").addEventListener("click", 
 
         if (notificationTimeEnd > now) {
 
-            fetch(`${CONFIG.API_BASE_URL}/email/schedule`, {
+            fetch(`${window.CONFIG.API_BASE_URL}/email/schedule`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -276,7 +276,7 @@ document.getElementById("save_notification_settings").addEventListener("click", 
 document.getElementById('clear_notification_settings').addEventListener('click', () => {
 
     // Send cancel request to backend
-    fetch(`${CONFIG.API_BASE_URL}/email/cancel`, {
+    fetch(`${window.CONFIG.API_BASE_URL}/email/cancel`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

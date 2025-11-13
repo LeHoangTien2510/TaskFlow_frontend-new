@@ -110,7 +110,7 @@ function renderPlaylists() {
 
                     try {
                         showToast("", 'Uploading video...');
-                        const response = await fetch(`${CONFIG.API_BASE_URL}/storage/upload`, {
+                        const response = await fetch(`${window.CONFIG.API_BASE_URL}/storage/upload`, {
                             method: 'POST',
                             body: formData,
                         });
@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     let username = localStorage.getItem('username');
 
-    fetch(`${CONFIG.API_BASE_URL}/video/get`, {
+    fetch(`${window.CONFIG.API_BASE_URL}/video/get`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 function update_database() {
     let username = localStorage.getItem('username');
-    fetch(`${CONFIG.API_BASE_URL}/video/update`, {
+    fetch(`${window.CONFIG.API_BASE_URL}/video/update`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

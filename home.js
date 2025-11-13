@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //    update profile
 
 
-    fetch(`${CONFIG.API_BASE_URL}/user/get_user`, {
+    fetch(`${window.CONFIG.API_BASE_URL}/user/get_user`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

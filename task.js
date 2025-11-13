@@ -239,7 +239,7 @@ async function uploadFileToAPI(file) {
   formData.append('folder', 'projects'); // Thư mục lưu trữ file
 
   try {
-    const response = await fetch(`${CONFIG.API_BASE_URL}/storage/upload`, { // Thay bằng API upload của bạn
+    const response = await fetch(`${window.CONFIG.API_BASE_URL}/storage/upload`, { // Thay bằng API upload của bạn
       method: 'POST',
       body: formData,
     });
@@ -258,7 +258,7 @@ async function uploadFileToAPI(file) {
 async function getProjectsFromDatabase() {
   const username = localStorage.getItem('username'); // Lấy username từ localStorage
 
-  const response = await fetch(`${CONFIG.API_BASE_URL}/project/get`, {
+  const response = await fetch(`${window.CONFIG.API_BASE_URL}/project/get`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -279,7 +279,7 @@ async function getProjectsFromDatabase() {
 async function saveProjectsToDatabase() {
   const username = localStorage.getItem('username'); // Lấy username từ localStorage
 
-  fetch(`${CONFIG.API_BASE_URL}/project/update`, { // Thay '/api/save-Tasks' bằng URL của API backend
+  fetch(`${window.CONFIG.API_BASE_URL}/project/update`, { // Thay '/api/save-Tasks' bằng URL của API backend
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
